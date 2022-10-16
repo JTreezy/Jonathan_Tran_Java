@@ -1,0 +1,229 @@
+openapi: 3.0.1
+info:
+  title: Module 2 Challenge
+  description: "This is the API documentation for Module 2 Challenge that consists of two models: Month and MathSolution. The month API has two endpoints: one can return a month (which is an object that has the properties of the designated mon in the year based on the integer selected, the other can randomly select a month in a year. The math solution API has four endpoints, one endpoint for every arithmetic operation: addition, subtraction, multiplication, and division."
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+    
+paths:
+  /month/{monthNumber}:
+      get:
+        tags:
+          - Month Controller
+        summary: Select a desired month in the year
+        description: Select a desired month in the year by integer values of 1 through 12
+        operationId: getMonthById
+        parameters:
+          - name: monthNumber
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+        responses:
+          '200':
+            description: OK
+            content:
+              '*/*':
+                schema:
+                  $ref: '#/components/schemas/Month'
+          '422':
+            description: Unprocessable Entity
+            content:
+              '*/*':
+                schema:
+                  oneOf:
+                    - type: array
+                      items:
+                        $ref: '#/components/schemas/CustomErrorResponse'
+                    - $ref: '#/components/schemas/CustomErrorResponse'
+  /randomMonth:
+    get:
+      tags:
+        - Month Controller
+      summary: Select a randomly selected month in the year
+      description: Select a randomly selected month in the year
+      operationId: getRandomMonth
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Month'
+        '422':
+          description: Unprocessable Entity
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/CustomErrorResponse'
+                  - $ref: '#/components/schemas/CustomErrorResponse'
+                  
+  /add:
+    post:
+      tags:
+        - Math Solution Controller
+      summary: Pass in a JSON Body using the schema at the bottom, or by just passing in only the two operand properties in a JSON body after hitting the API endpoint.
+      description: Add the two operand fields together to populate the answer property after performing the operation selected.
+      operationId: addNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+        '422':
+          description: Unprocessable Entity
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/CustomErrorResponse'
+                  - $ref: '#/components/schemas/CustomErrorResponse'
+                  
+  /subtract:
+    post:
+      tags:
+        - Math Solution Controller
+      summary: Pass in a JSON Body using the schema at the bottom, or by just passing in only the two operand properties in a JSON body after hitting the API endpoint.
+      description: Subtract the two operand fields together to populate the answer property after performing the operation selected.
+      operationId: subtractNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+        '422':
+          description: Unprocessable Entity
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/CustomErrorResponse'
+                  - $ref: '#/components/schemas/CustomErrorResponse'
+  /multiply:
+    post:
+      tags:
+        - Math Solution Controller
+      summary: Pass in a JSON Body using the schema at the bottom, or by just passing in only the two operand properties in a JSON body after hitting the API endpoint.
+      description: Multiply the two operand fields together to populate the answer property after performing the operation selected.
+      operationId: multiplyNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+        '422':
+          description: Unprocessable Entity
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/CustomErrorResponse'
+                  - $ref: '#/components/schemas/CustomErrorResponse'
+  /divide:
+    post:
+      tags:
+        - Math Solution Controller
+      summary: Pass in a JSON Body using the schema at the bottom, or by just passing in only the two operand properties in a JSON body after hitting the API endpoint.
+      description: Divide the two operand fields together to populate the answer property after performing the operation selected.
+      operationId: divideNumbers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathSolution'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/MathSolution'
+        '422':
+          description: Unprocessable Entity
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/CustomErrorResponse'
+                  - $ref: '#/components/schemas/CustomErrorResponse'
+
+
+  
+components:
+  schemas:
+    Month:
+      type: object
+      properties:
+        name:
+          type: string
+        number:
+          type: integer
+          format: int32
+
+    MathSolution:
+      type: object
+      properties:
+        operand1:
+          type: integer
+          format: int32
+        operand2:
+          type: integer
+          format: int32
+        answer:
+          type: integer
+          format: int32
+        operations:
+          type: string
+
+    CustomErrorResponse:
+      type: object
+      properties:
+        errorMsg:
+          type: string
+        status:
+          type: integer
+          format: int32
+        errorCode:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
