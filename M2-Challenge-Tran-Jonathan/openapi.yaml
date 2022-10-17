@@ -75,7 +75,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MathSolution'
+              $ref: '#/components/schemas/MathSolutionInput'
         required: true
       responses:
         '201':
@@ -83,7 +83,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/MathSolution'
+                $ref: '#/components/schemas/MathSolutionOutput'
         '422':
           description: Unprocessable Entity
           content:
@@ -106,7 +106,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MathSolution'
+              $ref: '#/components/schemas/MathSolutionInput'
         required: true
       responses:
         '201':
@@ -114,7 +114,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/MathSolution'
+                $ref: '#/components/schemas/MathSolutionOutput'
         '422':
           description: Unprocessable Entity
           content:
@@ -136,7 +136,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MathSolution'
+              $ref: '#/components/schemas/MathSolutionInput'
         required: true
       responses:
         '201':
@@ -144,7 +144,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/MathSolution'
+                $ref: '#/components/schemas/MathSolutionOutput'
         '422':
           description: Unprocessable Entity
           content:
@@ -166,7 +166,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MathSolution'
+              $ref: '#/components/schemas/MathSolutionInput'
         required: true
       responses:
         '201':
@@ -174,7 +174,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/MathSolution'
+                $ref: '#/components/schemas/MathSolutionOutput'
         '422':
           description: Unprocessable Entity
           content:
@@ -199,7 +199,18 @@ components:
           type: integer
           format: int32
 
-    MathSolution:
+MathSolutionInput:
+      type: object
+      properties:
+        operand1:
+          type: integer
+          format: int32
+        operand2:
+          type: integer
+          format: int32
+
+
+    MathSolutionOutput:
       type: object
       properties:
         operand1:
