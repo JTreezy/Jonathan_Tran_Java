@@ -15,7 +15,7 @@ public class Constable extends Person {
 
 
     public void arrestAnotherCharacter(Person person){
-        System.out.println("Halt, " + person.name + " you are under arrest!");
+        System.out.println("Halt, " + person.getName() + " you are under arrest!");
         person.setArrested(true);
     }
 }

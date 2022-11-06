@@ -1,12 +1,25 @@
 package com.company;
 
 public class Warrior extends Person {
-    int strength = 75;
-    int health = 100;
-    int stamina = 100;
-    int speed = 50;
-    int attackPower = 10;
     int shieldStrength = 100;
-    boolean running = false;
-    boolean arrested = false;
+
+    public Warrior() {
+        this.setStrength(75);
+        this.setHealth(100);
+        this.setStamina(100);
+        this.setSpeed(50);
+        this.setAttackPower(10);
+        this.setRunning(false);
+        this.setArrested(false);
+    }
+
+    public int getShieldStrength(int shieldStrength){
+        return shieldStrength;
+    }
+
+    public void setShieldStrength(int shieldStrength){
+        this.shieldStrength = shieldStrength;
+    }
+
+
 }

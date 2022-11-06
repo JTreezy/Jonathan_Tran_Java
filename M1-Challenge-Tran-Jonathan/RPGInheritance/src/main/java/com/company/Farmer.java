@@ -1,17 +1,37 @@
 package com.company;
 
 public class Farmer extends Person {
-    int strength = 75;
-    int health = 100;
-    int stamina = 75;
-    int speed = 10;
-    int attackPower = 1;
-    boolean running = false;
-    public boolean arrested = false;
     boolean plowing = false;
     boolean harvesting = false;
 
-    public void setArrested(boolean arrested) {
-        this.arrested = arrested;
+    public Farmer(boolean plowing, boolean harvesting) {
+        this.setStrength(75);
+        this.setHealth(100);
+        this.setStamina(75);
+        this.setSpeed(10);
+        this.setAttackPower(1);
+        this.setRunning(false);
+        this.setArrested(false);
+
+        this.plowing = plowing;
+        this.harvesting = harvesting;
     }
+
+    public boolean isPlowing() {
+        return plowing;
+    }
+
+    public void setPlowing(boolean plowing) {
+        this.plowing = plowing;
+    }
+
+    public boolean isHarvesting() {
+        return harvesting;
+    }
+
+    public void setHarvesting(boolean harvesting) {
+        this.harvesting = harvesting;
+    }
+
+
 }
