@@ -1,0 +1,14 @@
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\MusicStoreRecommendationsApplication.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\exception\NotFoundException.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\repository\AlbumRecommendationRepository.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\controller\LabelRecommendationController.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\repository\LabelRecommendationRepository.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\model\AlbumRecommendation.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\controller\AlbumRecommendationController.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\model\LabelRecommendation.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\repository\TrackRecommendationRepository.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\model\ArtistRecommendation.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\model\TrackRecommendation.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\controller\TrackRecommendationController.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\controller\ArtistRecommendationController.java
+C:\Users\Owner\Desktop\Java_Projects\Week7\heroku_recommendations\musicstore-recommendations\app\src\main\java\com\example\musicstorerecommendations\repository\ArtistRecommendationRepository.java
